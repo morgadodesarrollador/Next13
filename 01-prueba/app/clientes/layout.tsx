@@ -1,31 +1,28 @@
+import NavBar from "./NavBar"
 
 interface Props {
   children: React.ReactNode
 }
 
-export default function Layout ( {children} : Props ){
+
+const Layout = ( { children }: Props ) =>  {
   return (
     <>
-        <nav>Links</nav>
+        <NavBar/>
         <div>{ children }</div>
   
     </>
   )
 }
-
-
-
-// Props: {
-//     children: React.ReactNode
-// }
-// const layout = ({ children }: Props) => {
+export default Layout
+// export default function Layout ( {children} : Props ){
 //   return (
 //     <>
-//         <nav>Links</nav>
+//         <NavBar/>
 //         <div>{ children }</div>
-
+  
 //     </>
 //   )
 // }
 
-// export default layout
+
