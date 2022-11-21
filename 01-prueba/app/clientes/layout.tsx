@@ -9,6 +9,7 @@ const Layout = ( { children }: Props ) =>  {
   return (
     <>
         <NavBar/>
+        <hr />
         <div>{ children }</div>
   
     </>

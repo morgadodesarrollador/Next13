@@ -6,7 +6,7 @@ const getCliente = async ( clienteId: number): Promise<ICliente> => {
         next: { revalidate: 60 }
     });
 
-    return await res.json() as cliente
+    return await res.json()
 }
 
 interface Props {
@@ -15,7 +15,7 @@ interface Props {
     }
 }
 
-const page = async({ params }) => {
+const page = async({ params }: Props) => {
     const cliente = await getCliente( +params.id )
   return (
     <div className="row">

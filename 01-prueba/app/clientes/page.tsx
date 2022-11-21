@@ -26,7 +26,7 @@ const page = async() => {
         <h2>Clientes</h2>
         <ul className="list-group">
           {
-            clientes.map( (cliente: ICliente ) => {
+            clientes.map( (cliente ) => {
               return(<ClienteItem key={cliente.id} cliente={cliente} />)
             })
           }

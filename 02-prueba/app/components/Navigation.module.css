@@ -1,0 +1,21 @@
+
+
+
+.navigation-header {
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.navigation-header-a {
+    text-align: center;
+    width: 32%;
+    padding: 10px;
+    background-color: rgba(0,0,0,.2);
+    border-radius: 10px;
+    /* gap: 32px; */
+}
+.navigation-header-a:hover {
+    text-decoration: underline;
+}
