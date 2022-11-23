@@ -2,7 +2,7 @@
 
 
 .navigation-header {
-    width: 40%;
+    width: 50%;
     display: flex;
     justify-content: space-around;
     list-style: none;
@@ -10,7 +10,7 @@
 
 .navigation-header-a {
     text-align: center;
-    width: 32%;
+    width: 23%;
     padding: 10px;
     background-color: rgba(0,0,0,.2);
     border-radius: 10px;

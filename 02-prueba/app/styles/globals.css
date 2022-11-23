@@ -14,6 +14,10 @@ a {
 * {
   box-sizing: border-box;
 }
+button {
+  width: 50px !important;
+  margin-bottom: 10px !important;
+}
 
 @media (prefers-color-scheme: dark) {
   html {

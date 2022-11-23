@@ -5,6 +5,8 @@ const links = [
     { label: 'Home', route: '/'},
     { label: 'About', route: '/about'},
     { label: 'Clientes', route: '/clientes'},
+    { label: 'Posts', route: '/posts'}
+
 ]
 
 const NavBar = () => { 

@@ -1,0 +1,28 @@
+import { IPost } from '../interfaces/IPosts';
+import PostItem from './PostItem';
+
+
+
+const getPosts = async (): Promise<IPost[]> => {
+  const dataPosts = await fetch('https://jsonplaceholder.typicode.com/posts',
+      { cache: 'no-store' });
+  return dataPosts.json();;
+}
+
+const ListOfPost = async() => {
+  const posts = await getPosts();
+  return (
+      posts.slice(0,20).map ( (post: IPost) => { //paginador
+        return (
+          <PostItem key={post.id} post={post} />
+        )   
+      })
+  )
+}
+
+export default ListOfPost
+
+// interface Props {
+//   post: IPost
+// }
+// const PostItem:FC<Props> = ( { post }: Props) => {
