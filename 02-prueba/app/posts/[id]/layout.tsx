@@ -20,15 +20,15 @@ interface Props {
 
 const PostIdPage = async ({children, params}: Props ) => {
     const post = await getPost(+params.id);
-   const  { id } = params;
-  return (
-    <>
-        <PostId key={ id } post = {post} />
-        <Link href={`/posts/${post.id}/comments`}> Ver comentarios ...</Link>
-        <hr />
-        { children }
-    </>
-  )
+    const  { id } = params;
+    return (
+        <>
+            <PostId key={ id } post = {post} />
+            <Link href={`/posts/${post.id}/comments`}> Ver comentarios ...</Link>
+            <hr />
+            { children }
+        </>
+    )
 }
 
 

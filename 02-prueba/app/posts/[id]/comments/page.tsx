@@ -20,12 +20,12 @@ const CommentsPage = async ({params}: Props) => {
    
    console.log(comments);
   return (
-        <ul>
+        <ul style= {{background:'#eee',  fontSize: '10px' }}>
             { 
                 comments.map( (comment: IComment) => (
                     <li key={comment.id}>
                         <h2>{ comment.name }</h2>
-                        <p>{comment.body}</p>
+                        <small>{comment.body}</small>
                     </li>
                 ))
             }
