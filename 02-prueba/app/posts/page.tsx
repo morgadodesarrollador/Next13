@@ -7,9 +7,10 @@ import  ListOfPost  from "./components/ListOfPost"
 
   export default async function PostPage(params: any):Promise<any> {
     return (
-      <section>
-        <ListOfPost key={1} />
-      </section>
+      <>
+        <h2>Noticias del Periódico</h2>
+        <ListOfPost />
+      </>
     )
   }
   

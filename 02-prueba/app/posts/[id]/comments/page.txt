@@ -1,9 +1,6 @@
 import { IComment } from '../../interfaces/IPosts';
-import ListOfComments from './components/ListOfComments';
 
 const getPostComments = async( postId: number): Promise<IComment[]> => {
-    await new Promise (resolve => setTimeout(resolve, 2000));
-
     const comments = await fetch(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`, {
         next: { revalidate: 60 }
     });
@@ -21,7 +18,19 @@ const CommentsPage = async ({params}: Props) => {
 
    const comments = await getPostComments(+params.id);
    
-   return <ListOfComments key={id} id={ id }   />
+   console.log(comments);
+  return (
+        <ul style= {{background:'#eee',  fontSize: '10px' }}>
+            { 
+                comments.map( (comment: IComment) => (
+                    <li key={comment.id}>
+                        <h2>{ comment.name }</h2>
+                        <small>{comment.body}</small>
+                    </li>
+                ))
+            }
+        </ul>
+    )
 }
 
 

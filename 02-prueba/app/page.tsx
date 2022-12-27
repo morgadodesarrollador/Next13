@@ -5,7 +5,7 @@ import styles from './page.module.css'
 const Home = () => {
   return (
     <div>
-      <h2>Hola Mundo</h2>
+      <h2>Sección Principal</h2>
     </div>
   )
 }

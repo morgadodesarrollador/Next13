@@ -17,7 +17,6 @@ interface Props {
         id: string
     }
 }
-
 const PostIdPage = async ({children, params}: Props ) => {
     const post = await getPost(+params.id);
     const  { id } = params;
@@ -27,6 +26,7 @@ const PostIdPage = async ({children, params}: Props ) => {
             <Link href={`/posts/${post.id}/comments`}> Ver comentarios ...</Link>
             <hr />
             { children }
+
         </>
     )
 }
