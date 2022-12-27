@@ -5,7 +5,7 @@ const Loading = () => {
   return (
     <div>
       Cargando Comentarios ...
-      <Image src="/200w.gif" width={100} height={100} />
+      <Image src="/200w.gif" width={100} height={100} alt={''} />
     </div>
   )
 }

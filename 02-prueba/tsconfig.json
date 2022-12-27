@@ -20,6 +20,6 @@
       }
     ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/posts/page.tsx", "app/posts/components/ListOfPost.tsxBCK"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/posts/page1.tsxt11", "app/posts/components/ListOfPost.tsxBCK, "app/posts/components/ListOfPost copy.ts1""],
   "exclude": ["node_modules"]
 }
