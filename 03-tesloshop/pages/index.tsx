@@ -1,12 +1,20 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-// import styles from '../styles/Home.module.css'
+import { NextPage } from 'next'
+import { Typography } from '@mui/material';
+import { ShopLayouts } from '../components/layouts'
 
-const inter = Inter({ subsets: ['latin'] })
-
-export default function Home() {
+const Home: NextPage = () => {
   return (
-      <h1>Hola Mundo5</h1>
+    //La página index.tsx llama al ShopLayouts.tsx 
+      <ShopLayouts 
+        title= { 'TesloShop - Home'}
+        pageDescription= { 'Encuentra los mejores productos de TesloShop aqui...'}
+      >
+        { /* se instanciará al objeto children de ShopLayouts.tsx */}
+        <Typography variant='h1' component='h1'>Tienda</Typography>
+        <Typography variant='h2' sx = {{ marginBottom: 1 }}>Todos los productos</Typography>
+      </ShopLayouts>
   )
 }
+
+
+export default Home;
