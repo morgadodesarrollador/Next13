@@ -1,5 +1,6 @@
-import Head from "next/head"
 import { FC } from 'react';
+import Head from "next/head"
+import { Navbar } from '../ui';
 
 interface Props {
     title: string;
@@ -8,14 +9,13 @@ interface Props {
     imageFullUrl?: string;
     children?: any;
 }
- export const ShopLayouts:FC<Props> = (
+export const ShopLayouts:FC<Props> = (
     { children, title, pageDescription, imageFullUrl }) => {
   return (
     <>
         <Head>
             <title>{ title } </title>
             <meta name="description" content={ pageDescription } />
-            {/* metas para las redes sociales */}
             <meta name="og:title" content={title} />
             <meta name="og:description" content = { pageDescription } />
             {
@@ -25,7 +25,7 @@ interface Props {
             }
         </Head>
         <nav>
-            { /* TODO: Navbar */ }
+            <Navbar />
         </nav>
         { /* TODO: SideBar */ }
         <main style={{
