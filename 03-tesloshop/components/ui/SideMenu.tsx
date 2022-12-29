@@ -3,13 +3,10 @@ import { Box, Divider, Drawer, IconButton, Input, InputAdornment, List, ListItem
 
 const SideMenu = () => {
   return (
-    <Drawer
-        open={true}
-        anchor='right'
+    <Drawer open={false} anchor='right'
         sx={{ backdropFilter: 'blur(4px)', transition: 'all 0.5s ease-out'}}
     >
-        <Box sx={{ width: 250, paddingTop: 5 }}>
-            
+        <Box sx={{ width: 250, paddingTop: 5 }}>     
             <List>
 
                 <ListItem>
@@ -27,7 +24,6 @@ const SideMenu = () => {
                         }
                     />
                 </ListItem>
-
                 <ListItem button>
                     <ListItemIcon>
                         <AccountCircleOutlined/>
