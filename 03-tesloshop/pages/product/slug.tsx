@@ -25,7 +25,7 @@ const ProductPage = () => {
               <Typography variant='subtitle2' component='h4'> Cantidad </Typography>
               <ItemCounter />
               <SizeSelector 
-                    // selectedSize= { producto.sizes[0] }  
+                    // selectedSize= { producto.sizes[0]  }  
                     sizes={ producto.sizes } />
             </Box>
 
