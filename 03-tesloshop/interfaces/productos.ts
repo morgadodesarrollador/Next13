@@ -10,7 +10,9 @@ export interface IProducto {
     tags: string[];
     title: string;
     type: IType;
-    gender: 'men'|'women'|'kid'|'unisex'
+    gender: 'men'|'women'|'kid'|'unisex';
+
+    //TODO: agregar métodos createdAt y updateAt
 }
 
 export type ISize = 'XS'|'S'|'M'|'L'|'XL'|'XXL'|'XXXL';
