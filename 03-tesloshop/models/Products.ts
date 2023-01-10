@@ -1,7 +1,6 @@
 import mongoose, { Schema, model, Model } from 'mongoose';
 import { IProducto } from '../interfaces/productos';
 
-
 const productSchema = new Schema ({
     description: { type: String, required: true },
     images: [{ type: String }],
@@ -34,10 +33,7 @@ const productSchema = new Schema ({
 }, {
     timestamps: true //marcas de tiempo de mongo
 })
-
 /* TODO: Crear un índice para las búsquedas */
-
-//                                                                  crea el modelo Product con la info del productSchema                                                                    
+//                                                  crea el modelo Product con la info del productSchema                                                                    
 const ProductModel: Model<IProducto> = mongoose.models.Product || model('Product', productSchema);
-
 export default ProductModel;
