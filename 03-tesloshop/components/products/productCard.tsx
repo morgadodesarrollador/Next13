@@ -9,6 +9,7 @@ interface Props {
 export const ProductCard: FC<Props> = ({ producto }) => {
  //controlar si el mouse está encima o no. Para cambiar de imagen del producto
   const [ isHovered, setisHovered ] = useState(false);
+  const [ isImagedLoaded, setIsImagedLoaded ] = useState(false);
   
   //deseamos memorizar el productImage
   const productoImage = useMemo(() => {
@@ -30,12 +31,14 @@ export const ProductCard: FC<Props> = ({ producto }) => {
                     component='img'
                     className='fadeIn'
                     image={ productoImage } 
-                    alt = { producto.title }/>
+                    alt = { producto.title }
+                    onLoad = { () => setIsImagedLoaded(true) }
+                    />
               </CardActionArea>    
           </Link>
         
       </Card>
-      <Box sx= {{ marginTop: 1 }} className='fadeIn'>
+      <Box sx= {{ marginTop: 1, display: isImagedLoaded ? 'block' : 'none' }} className='fadeIn'>
         <Typography fontWeight={700}>{ producto.title }</Typography>
         <Typography fontWeight={500}>{ `$${producto.price}` }</Typography>
       </Box>

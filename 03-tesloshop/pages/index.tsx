@@ -9,6 +9,7 @@ import { FullScreenLoading } from '../components/ui';
 const HomePage: NextPage = () => {
   
   const { productos, isLoading } = useProducts('/products');
+  console.log("p=", productos);
   return (
     //La página index.tsx llama al ShopLayouts.tsx 
       <ShopLayouts 
@@ -19,7 +20,7 @@ const HomePage: NextPage = () => {
         {
           isLoading
             ? <FullScreenLoading />
-            : <ProductList productos = { productos } />
+            : <ProductList key={1} productos = { productos } />
         }
       </ShopLayouts>
   )
