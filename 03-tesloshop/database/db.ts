@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose, { ConnectOptions } from 'mongoose';
 
 /**
  * 0 = disconnected
@@ -12,6 +12,15 @@ const mongoConnection = {
 
 export const connect = async() => {
 
+    const uri = process.env.MONGO_URL || '';
+    const options = {
+        useUnifiedTopology: true,
+        useNewUrlParser: false,
+        authSource: "admin",
+        // useCreateIndex: true,
+        // useFindAndModify: false,
+    }
+
     if ( mongoConnection.isConnected ) {
         console.log('Ya estabamos conectados');
         return;
@@ -23,9 +32,10 @@ export const connect = async() => {
             console.log('Usando conexión anterior');
             return;
         }
-        await mongoose.disconnect();
+        // await mongoose.disconnect();
     }
-    await mongoose.connect( process.env.MONGO_URL || '');
+    // mongoose.set('strictQuery', false);
+    await mongoose.connect( uri, options as ConnectOptions);
     mongoConnection.isConnected = 1;
     console.log('Conectado a MongoDB:', process.env.MONGO_URL );
 }

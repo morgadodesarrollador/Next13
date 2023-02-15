@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import NextLink from 'next/link';
 import { Typography, Grid, Link, CardActionArea, CardMedia, Box, Button } from '@mui/material';
-import { initialData } from '../../database/products';
+import { initialData } from '../../database/seeData';
 import { ItemCounter } from '../ui';
 
 const productIsCart = [

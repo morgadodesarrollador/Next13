@@ -3,8 +3,7 @@ import { ShopLayouts } from '../../components/layouts/ShopLayouts';
 import { Chip, Grid, Link, Typography } from '@mui/material';
 import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
 import NextLink from 'next/link';
-import { clear } from 'console';
-
+    
 const colums: GridColDef[] = [
     { field: 'id', headerName: 'ID', width: 100 },
     { field: 'fullname', headerName: 'Nombre Completo', width: 300 },   
@@ -13,26 +12,26 @@ const colums: GridColDef[] = [
         headerName: 'Pagada',
         description: 'Muestra información si la orden está pagada o no',
         width: 200,
-        renderCell: (params: GridValueGetterParams) => {
-            return (
-                params.row.paid
-                    ? <Chip color='success' label='Pagada' variant='filled' />
-                    : <Chip color='error' label='No Pagada' variant='filled' />
-            )
-        }
+        // renderCell: (params: GridValueGetterParams): any => {
+        //     return (
+        //         params.row.paid
+        //             ? <Chip color='success' label='Pagada' variant='filled' />
+        //             : <Chip color='error' label='No Pagada' variant='filled' />
+        //     )
+        // }
     },
     {
         field: 'orden',
         headerName: 'Ver Orden',
         sortable: false,
         width: 200,
-        renderCell: (params: GridValueGetterParams) => {
-            return (
-                <Link href={`/orders/${ params.row.id }`} passHref component={NextLink} underline='always'>
-                    Ver Orden
-                </Link>
-            )
-        }
+        // renderCell: (params: GridValueGetterParams) => {
+        //     return (
+        //         <Link href={`/orders/${ params.row.id }`} passHref component={NextLink} underline='always'>
+        //             Ver Orden
+        //         </Link>
+        //     )
+        // }
     }
 ]
 const rows = [

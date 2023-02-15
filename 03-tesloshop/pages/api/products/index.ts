@@ -20,6 +20,7 @@ export default function (req: NextApiRequest, res: NextApiResponse<Data>) {
             })
     }
 }
+// lo ejecuta MongoDB
 const getProducts = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
     const { gender = 'all'} = req.query; // si no viene gender=all es el x defecto
     let condition = {}; // condition = { gender: 'kid'}
@@ -28,8 +29,9 @@ const getProducts = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
     }
     await db.connect();
     const products = await Product.find( condition )
-                                    .select('title images price inStock sulug -_id')
+                                    .select('title images price inStock slug -_id')
                                     .lean();
+    console.log("---->",products);
     return res.status(200).json (products);
     await db.disconnect();
 }
